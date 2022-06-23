@@ -1,0 +1,75 @@
+/*Configs grid*/
+.content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 11.4rem 1fr;
+    grid-template-areas: 
+    'header header'
+    'left   right';
+}
+
+.content .header{
+    grid-area: header;
+
+    width: 100%;
+    padding: 3.5rem 16rem;
+}
+
+.content .bg-image{
+    grid-area: left;
+
+    background: url('../img/foto-bg-home.svg')top/contain no-repeat;
+    width: 75.664rem;
+}
+
+.content .container{
+    grid-area: right;
+
+    width: min(36.3rem, 100%); /*Vai pegar o menor tamanho referente ao width*/
+}
+
+/* Container rigth */
+.login-room h2{
+    margin-bottom: 2.4rem;
+}
+
+.login-room .input-code-room{
+    margin-bottom: 1.8rem;
+    padding: 1.3rem 1.2rem 1.3rem 1.6rem;
+    width: 100%;
+
+    border: .2rem solid var(--grey-blue);
+    border-radius: .8rem;
+    outline: none;
+}
+
+.login-room .input-code-room::placeholder{
+    color: var(--grey-blue);
+    line-height: 2.2rem;
+}
+
+.separator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.345rem;
+
+    margin-block: 4rem;
+
+    font-family: 'Poppins', sans-serif;
+    color: var(--grey-blue);
+    line-height: 2.4rem;
+}
+
+.separator::after, .separator::before{
+    content: '';
+    width: 100%;
+    height: .1rem;
+    background-color: var(--grey-blue);
+    position: relative;
+    display: flex;
+}
+
+.create-room h2{
+    margin-bottom: 2.4rem;
+}
