@@ -18,13 +18,16 @@
     --light-blue: #E0ECFF;
     --blue: #3485FF;
     --bg-color: #FBFCFF;
-    --overlay: #040911; 
+    --overlay: rgba(4, 9, 17, .8); 
     --icon-details: #A5B0C1;
 
     --gray-dark: #4D5E77;
-    --grey-blue: #A1B2CD;
-    --grey-medium: #D3D9E2;
-    --grey-light: #E5EAF1;
+    --gray-blue: #A1B2CD;
+    --gray-medium: #D3D9E2;
+    --gray-light: #E5EAF1;
+    --gray-opacity: #eaecf1;
+
+    overflow: overlay;
 }
 
 body{
@@ -40,11 +43,14 @@ body{
 .content{
     width: 100vw;
 }
-
-.content > .header, .wrapper { /*Limites*/
+.wrapper, .content > .header{ /*Limites*/
     width: 100vw;
-    padding: 3.5rem 16rem;
+    padding: 3.5rem 16rem 0 16rem;
     margin-inline: auto;
+}
+
+.wrapper{
+    padding: 6.4rem 16rem 0 16rem;
 }
 
 .sr-only{ /*Fazer o label desaparecer*/
@@ -108,6 +114,18 @@ h2{
     border-color: var(--blue);
     background-color: var(--white);
     color: var(--blue);
+}
+
+.btn-gray{
+    border-color: var(--gray-light);
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+}
+
+.btn-red{
+    border-color: var(--red);
+    background-color: var(--red);
+    color: var(--white);
 }
 
 .create-room .btn, .login-room button{

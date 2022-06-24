@@ -14,10 +14,11 @@
         <!-- Link CSS -->
         <link rel="stylesheet" href="./assets/css/main.css">
         <link rel="stylesheet" href="./assets/css/room.css">
+        <link rel="stylesheet" href="./assets/css/modal.css">
     </head>
 
     <body>
-        <div class="content">
+        <div class="content modal-active">
             <header class="header">
                 <a href="./"><img src="./assets/img/logo-rocketq.svg" alt="Logo da rocket.q"></a>
                 
@@ -68,10 +69,10 @@
                 </div>
             </header>
         
-                <main>
-                    <div class="container wrapper">
+            <main>
+                <div class="container wrapper">
 
-                        <section class="ask-section">
+                    <section class="ask-section">
                             <h2>Faça sua pergunta</h2>
                             <form action="" method="post">
                                 <label class="sr-only" for="question">O que você quer perguntar?</label>
@@ -89,38 +90,78 @@
                                     </button>
                                 </div>
                             </form>
-                        </section>
+                    </section>
                     
-                        <section class="group-questions">
-                            <div class="question">
-                                <div class="content-question">
-                                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <section class="group-questions">
+                        <div class="question">
+                            <div class="content-question">
+                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="26" cy="26" r="26" fill="#3485FF"/>
                                         <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <p>Qual a diferença entre const, var e let no JavaScript?</p>
-                                </div>
-                                <div class="group-btns-actions">
-                                    <a href="#" class="btn-verified-read">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                <p>Qual a diferença entre const, var e let no JavaScript?</p>
+                            </div>
+                            <div class="group-btns-actions">
+                                <a href="#" class="btn-verified-read">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 6L9 17L4 12" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Marcar como lida
-                                    </a>
-                                    <a href="#" class="btn-delete-question">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    </svg>
+                                    Marcar como lida
+                                </a>
+                                <a href="#" class="btn-delete-question">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Excluir
-                                    </a>
-                                </div>
+                                    </svg>
+                                    Excluir
+                                </a>
                             </div>
-                        </section>
+                        </div>
 
-                    </div>
-                </main>
+                        <div class="question question-read">
+                            <div class="content-question">
+                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="26" cy="26" r="26" fill="#3485FF"/>
+                                        <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p>Qual a diferença entre const, var e let no JavaScript?</p>
+                            </div>
+                            <div class="group-btns-actions">
+                                <a href="#" class="btn-delete-question">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Excluir
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
         </div>
+
+        <section class="modal-wrapper">
+            <div class="modal">
+                <h2>Excluir pergunta</h2>
+                <p>Tem certeza que você deseja excluir esta pergunta?</p>
+                <form action="" method="post">
+                    <label for="password" class="sr-only">Insira a sua senha</label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <div class="group-btns-modal">
+                        <button class="btn btn-gray" type="button">
+                            Cancelar
+                        </button>
+                        <button class="btn btn-red">
+                            Sim, excluir
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </body>
 </html>

@@ -30,7 +30,7 @@
 }
 
 .ask-section form{
-    border: .2rem solid var(--grey-blue);
+    border: .2rem solid var(--gray-blue);
     border-radius: 0 .8rem .8rem .8rem;
 
     padding: 1.2rem 1.6rem 1.6rem 1.6rem;
@@ -47,7 +47,7 @@
 }
 
 .ask-section textarea::placeholder{
-    color: var(--grey-blue);
+    color: var(--gray-blue);
 }
 
 .ask-section .footer-question{
@@ -84,6 +84,8 @@
     justify-content: center;
     align-items: center;
     gap: .8rem;
+
+    padding-bottom: 3.4rem;
 }
 
 .group-questions .question{
@@ -97,19 +99,25 @@
 .question .content-question{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.6rem;
 
     margin-bottom: 1.2rem;
 }
 
-.content-question svg{
-    width: 5.2rem;
+.content-question > svg{
+    min-width: 5.2rem;
 }
 
-.content-question p{
+.content-question > p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 5.2rem;
+
     line-height: 2.2rem;
     color: var(--black);
+    word-break: break-word;
 }
 
 .question .group-btns-actions{
@@ -119,7 +127,7 @@
     gap: 2.4rem;
 }
 
-.group-btns-actions a{
+.group-btns-actions > a{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,4 +135,13 @@
 
     line-height: 2.2rem;
     color: var(--gray-dark);
+}
+
+/* question-read configs */
+.question.question-read{
+    background-color: var(--gray-opacity);
+}
+
+.question.question-read > .content-question > svg circle{
+    fill: var(--gray-blue);
 }
