@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     border: none;
+    outline: none;
 
     font-family: 'Open Sans', sans-serif;
 }
@@ -27,13 +28,23 @@
 }
 
 body{
+    display: flex;
+
     width: 100vw;
     height: 100vh;
+    background-color: var(--white);
+
+    font-size: 1.6rem; /*Documento volta ao normal de 16px*/
 }
 
-body{
-    font-size: 1.6rem; /*Documento volta ao normal de 16px*/
-    background-color: var(--white);
+.content{
+    width: 100vw;
+}
+
+.content > .header, .wrapper { /*Limites*/
+    width: 100vw;
+    padding: 3.5rem 16rem;
+    margin-inline: auto;
 }
 
 .sr-only{ /*Fazer o label desaparecer*/
@@ -60,7 +71,7 @@ header img{
 h2{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: clamp(2rem, 2.8rem, 5vw);
+    font-size: clamp(2rem, 2.8rem, 5vw); /*preza pelo padrão a menos que exceda o max ou o min*/
     line-height: 4.2rem;
     color: var(--black);
 }
@@ -73,29 +84,34 @@ h2{
 
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    font-size: 1.6rem;
     line-height: 2.4rem;
 
+    width: fit-content;
+    border: .2rem solid;
     border-radius: .8rem;
     cursor: pointer;
 }
 
-.btn img{
+.btn svg{
     width: 2rem;
+    height: 2rem;
 }
 
 .btn-blue{
+    border-color: var(--blue);
     background-color: var(--blue);
     color: var(--white);
 }
 
 .btn-white{   
-    border: 2px solid var(--blue);
+    border-color: var(--blue);
     background-color: var(--white);
-    color: var(var(--blue));
+    color: var(--blue);
 }
 
 .create-room .btn, .login-room button{
-    padding: 1.3rem 1rem;
+    padding: 1.5rem 1rem;
     width: 100%;
 
     transition: filter .2s;
@@ -103,4 +119,8 @@ h2{
 
 .create-room .btn:hover, .login-room button:hover{
     filter: brightness(1.2);
+}
+
+.icon-users-white stop{
+    stop-color: var(--white);
 }

@@ -1,0 +1,130 @@
+/* Header configs */
+.content .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .group-btns-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .8rem;
+}
+
+.group-btns-nav .btn-white{
+    padding: 1.5rem 1.6rem;
+}
+
+.group-btns-nav .btn-blue{
+    padding: 1.5rem 3.2rem;
+}
+
+/* ask section configs */
+.content .ask-section{
+    margin-bottom: 1.6rem;
+}
+
+.content .ask-section > h2{
+    margin-bottom: 2.4rem;
+}
+
+.ask-section form{
+    border: .2rem solid var(--grey-blue);
+    border-radius: 0 .8rem .8rem .8rem;
+
+    padding: 1.2rem 1.6rem 1.6rem 1.6rem;
+}
+
+.ask-section textarea{
+    resize: none;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.ask-section textarea::placeholder{
+    color: var(--grey-blue);
+}
+
+.ask-section .footer-question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-question .anonymous{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .6rem;
+
+    color: var(--icon-details);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+.anonymous svg{
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer-question .btn{
+    padding: .8rem 2.4rem;
+}
+
+/* questions configs */
+.group-questions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+}
+
+.group-questions .question{
+    background-color: var(--light-blue);
+    border-radius: 0 .8rem .8rem .8rem;
+
+    width: 100%;
+    padding: 2.4rem 3.2rem 2.4rem 2.4rem;
+}
+
+.question .content-question{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+
+    margin-bottom: 1.2rem;
+}
+
+.content-question svg{
+    width: 5.2rem;
+}
+
+.content-question p{
+    line-height: 2.2rem;
+    color: var(--black);
+}
+
+.question .group-btns-actions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.group-btns-actions a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+
+    line-height: 2.2rem;
+    color: var(--gray-dark);
+}

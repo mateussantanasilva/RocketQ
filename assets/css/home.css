@@ -1,4 +1,17 @@
 /*Configs grid*/
+body{
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40vw;
+    margin-top: -4.5rem;
+}
+
 .content{
     display: grid;
     grid-template-columns: 60% 40%;
@@ -10,21 +23,20 @@
 
 .content .header{
     grid-area: header;
-
-    width: 100%;
-    padding: 3.5rem 16rem;
 }
 
 .content .bg-image{
     grid-area: left;
 
     background: url('../img/foto-bg-home.svg')top/contain no-repeat;
+    background-position-x: -10rem;
+
     width: 75.664rem;
 }
 
 .content .container{
     grid-area: right;
-
+    align-self: center;
     width: min(36.3rem, 100%); /*Vai pegar o menor tamanho referente ao width*/
 }
 
@@ -40,12 +52,14 @@
 
     border: .2rem solid var(--grey-blue);
     border-radius: .8rem;
-    outline: none;
+
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: var(--black);
 }
 
 .login-room .input-code-room::placeholder{
     color: var(--grey-blue);
-    line-height: 2.2rem;
 }
 
 .separator{
@@ -72,4 +86,29 @@
 
 .create-room h2{
     margin-bottom: 2.4rem;
+}
+
+/* balls configs  */
+.ball{
+    position: fixed;
+    clip-path: circle();
+
+    background-color: var(--blue);
+    opacity: 0.1;
+}
+
+.ball.top{
+    width: 63.355rem;
+    height: 63.355rem;
+
+    right: -40rem;
+    top: -40rem;
+}
+
+.ball.bottom{
+    width: 21.2rem;
+    height: 21.2rem;
+
+    right: 5.6rem;
+    bottom: -15rem;
 }
