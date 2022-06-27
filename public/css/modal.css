@@ -2,6 +2,11 @@
     overflow: hidden;
 }
 
+.content.modal-active + .modal-wrapper{
+    opacity: 1;
+    visibility: visible;
+}
+
 .modal-wrapper{
     display: flex;
     justify-content: center;
@@ -14,6 +19,9 @@
     width: 100vw;
     height: 100vh; 
     background-color: var(--overlay);
+
+    opacity: 0;
+    visibility: hidden;
 }
 
 .modal-wrapper .modal{
@@ -41,7 +49,7 @@
     color: var(--gray-dark);
 }
 
-.modal form input{
+.modal form .input-modal{
     margin-bottom: 4rem;
     padding: 1.3rem 1.6rem;
     width: 30.2rem;
@@ -56,6 +64,10 @@
 
 .modal form input::placeholder{
     color: var(--black);
+}
+
+.modal form .input-red{
+    border-color: var(--red);
 }
 
 .group-btns-modal{

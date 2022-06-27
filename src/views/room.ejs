@@ -12,15 +12,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
         <!-- Link CSS -->
-        <link rel="stylesheet" href="./assets/css/main.css">
-        <link rel="stylesheet" href="./assets/css/room.css">
-        <link rel="stylesheet" href="./assets/css/modal.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/room.css">
+        <link rel="stylesheet" href="/css/modal.css">
+
+        <!-- Scripts -->
+        <script src="/js/main.js" defer type="module"></script>
     </head>
 
     <body>
-        <div class="content modal-active">
+        <div class="content">
             <header class="header">
-                <a href="./"><img src="./assets/img/logo-rocketq.svg" alt="Logo da rocket.q"></a>
+                <a href="/"><img src="/img/logo-rocketq.svg" alt="Logo da rocket.q"></a>
                 
                 <div class="group-btns-nav">
                     <button class="btn btn-white">
@@ -30,7 +33,7 @@
                             <path d="M4.16675 12.5H3.33341C2.89139 12.5 2.46746 12.3244 2.1549 12.0118C1.84234 11.6992 1.66675 11.2753 1.66675 10.8333V3.33329C1.66675 2.89127 1.84234 2.46734 2.1549 2.15478C2.46746 1.84222 2.89139 1.66663 3.33341 1.66663H10.8334C11.2754 1.66663 11.6994 1.84222 12.0119 2.15478C12.3245 2.46734 12.5001 2.89127 12.5001 3.33329V4.16663" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <button class="btn btn-blue">
+                    <button class="btn">
                         <svg class="icon-users-white" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_10922_601)">
                             <path d="M14.1668 17.5V15.8333C14.1668 14.9493 13.8156 14.1014 13.1905 13.4763C12.5654 12.8512 11.7176 12.5 10.8335 12.5H4.16683C3.28277 12.5 2.43493 12.8512 1.80981 13.4763C1.18469 14.1014 0.833496 14.9493 0.833496 15.8333V17.5" stroke="url(#paint0_linear_10922_601)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,7 +88,7 @@
                                         </svg>
                                         Esta pergunta é anônima
                                     </div>
-                                    <button class="btn btn-blue">
+                                    <button class="btn">
                                         Enviar
                                     </button>
                                 </div>
@@ -150,12 +153,12 @@
                 <p>Tem certeza que você deseja excluir esta pergunta?</p>
                 <form action="" method="post">
                     <label for="password" class="sr-only">Insira a sua senha</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" id="password" class="input-modal input-red" placeholder="Digite sua senha">
                     <div class="group-btns-modal">
-                        <button class="btn btn-gray" type="button">
+                        <button class="btn btn-cancel btn-gray" type="button">
                             Cancelar
                         </button>
-                        <button class="btn btn-red">
+                        <button class="btn btn-delete-confirm btn-red">
                             Sim, excluir
                         </button>
                     </div>

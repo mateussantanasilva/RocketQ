@@ -12,11 +12,11 @@
     gap: .8rem;
 }
 
-.group-btns-nav .btn-white{
+.group-btns-nav .btn.btn-white{
     padding: 1.5rem 1.6rem;
 }
 
-.group-btns-nav .btn-blue{
+.group-btns-nav .btn:nth-child(2){
     padding: 1.5rem 3.2rem;
 }
 

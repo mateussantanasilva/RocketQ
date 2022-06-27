@@ -97,17 +97,15 @@ h2{
     border: .2rem solid;
     border-radius: .8rem;
     cursor: pointer;
+
+    border-color: var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .btn svg{
     width: 2rem;
     height: 2rem;
-}
-
-.btn-blue{
-    border-color: var(--blue);
-    background-color: var(--blue);
-    color: var(--white);
 }
 
 .btn-white{   
