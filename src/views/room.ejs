@@ -9,7 +9,7 @@
         <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Link CSS -->
         <link rel="stylesheet" href="/css/main.css">
@@ -26,14 +26,14 @@
                 <a href="/"><img src="/img/logo-rocketq.svg" alt="Logo da rocket.q"></a>
                 
                 <div class="group-btns-nav">
-                    <button class="btn btn-white">
-                        #323243
+                    <button class="btn btn-white" data-id="<%= room %>">
+                        #<%= room %>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.6667 7.5H9.16667C8.24619 7.5 7.5 8.24619 7.5 9.16667V16.6667C7.5 17.5871 8.24619 18.3333 9.16667 18.3333H16.6667C17.5871 18.3333 18.3333 17.5871 18.3333 16.6667V9.16667C18.3333 8.24619 17.5871 7.5 16.6667 7.5Z" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M4.16675 12.5H3.33341C2.89139 12.5 2.46746 12.3244 2.1549 12.0118C1.84234 11.6992 1.66675 11.2753 1.66675 10.8333V3.33329C1.66675 2.89127 1.84234 2.46734 2.1549 2.15478C2.46746 1.84222 2.89139 1.66663 3.33341 1.66663H10.8334C11.2754 1.66663 11.6994 1.84222 12.0119 2.15478C12.3245 2.46734 12.5001 2.89127 12.5001 3.33329V4.16663" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <button class="btn">
+                    <a href="/criar-senha" class="btn">
                         <svg class="icon-users-white" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_10922_601)">
                             <path d="M14.1668 17.5V15.8333C14.1668 14.9493 13.8156 14.1014 13.1905 13.4763C12.5654 12.8512 11.7176 12.5 10.8335 12.5H4.16683C3.28277 12.5 2.43493 12.8512 1.80981 13.4763C1.18469 14.1014 0.833496 14.9493 0.833496 15.8333V17.5" stroke="url(#paint0_linear_10922_601)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -68,7 +68,7 @@
                             </defs>
                         </svg>
                         Criar sala
-                    </button>
+                    </a>
                 </div>
             </header>
         
@@ -77,7 +77,7 @@
 
                     <section class="ask-section">
                             <h2>Faça sua pergunta</h2>
-                            <form action="" method="post">
+                            <form action="/criar-pergunta/<%= room %>" method="post">
                                 <label class="sr-only" for="question">O que você quer perguntar?</label>
                                 <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
 
@@ -96,51 +96,68 @@
                     </section>
                     
                     <section class="group-questions">
-                        <div class="question">
-                            <div class="content-question">
-                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="26" cy="26" r="26" fill="#3485FF"/>
-                                        <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <p>Qual a diferença entre const, var e let no JavaScript?</p>
-                            </div>
-                            <div class="group-btns-actions">
-                                <a href="#" class="btn-verified-read">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 6L9 17L4 12" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="btn-delete-question">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Excluir
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="question question-read">
-                            <div class="content-question">
-                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="26" cy="26" r="26" fill="#3485FF"/>
-                                        <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <p>Qual a diferença entre const, var e let no JavaScript?</p>
-                            </div>
-                            <div class="group-btns-actions">
-                                <a href="#" class="btn-delete-question">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <% if(isNotHaveQuestions){ %>
+
+                            <%- include('partials/no-questions') %>
+
+                        <% } %>
+
+                        <!-- Loop questions no read -->
+                        <% questionsNoRead.forEach(questionNoRead => { %>
+
+                            <div class="question">
+                                <div class="content-question">
+                                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="26" cy="26" r="26" fill="#3485FF"/>
+                                            <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    Excluir
-                                </a>
+                                    <p><%= questionNoRead.content_question %></p>
+                                </div>
+                                <div class="group-btns-actions">
+                                    <a href="#" class="btn-verified-read" data-id="<%= questionNoRead.id %>">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6L9 17L4 12" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Marcar como lida
+                                    </a>
+                                    <a href="#" class="btn-delete-question" data-id="<%= questionNoRead.id %>">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Excluir
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+
+                        <% }) %>
+
+
+                        <% questionsRead.forEach(questionRead => {%>
+                        
+                            <div class="question question-read">
+                                <div class="content-question">
+                                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="26" cy="26" r="26" fill="#3485FF"/>
+                                            <path d="M34 35V33C34 31.9391 33.5786 30.9217 32.8284 30.1716C32.0783 29.4214 31.0609 29 30 29H22C20.9391 29 19.9217 29.4214 19.1716 30.1716C18.4214 30.9217 18 31.9391 18 33V35" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M26 25C28.2091 25 30 23.2091 30 21C30 18.7909 28.2091 17 26 17C23.7909 17 22 18.7909 22 21C22 23.2091 23.7909 25 26 25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p><%= questionRead.content_question %></p>
+                                </div>
+                                <div class="group-btns-actions">
+                                    <a href="#" class="btn-delete-question" data-id="<%= questionRead.id %>">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Excluir
+                                    </a>
+                                </div>
+                            </div>
+
+                        <% }) %>
                     </section>
 
                 </div>

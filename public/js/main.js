@@ -13,9 +13,20 @@ btnDelete.forEach(btn => {
     btn.addEventListener('click', event => changeClick(event, false))
 })
 
+// Função ao clicar em algum btn-action
 function changeClick(event, btnRead) {
     event.preventDefault() /* Tira a função de link para levar a outra página */
+    
     const text = btnRead ? 'Marcar como lida' : 'Excluir'
+    const typeAction = btnRead ? 'read' : 'delete'
+    
+    // Elementos para as questões
+    const roomId = document.querySelector('.group-btns-nav .btn.btn-white').dataset.id
+    const questionId = event.target.dataset.id
+
+    //Formulário
+    const formModal = document.querySelector('.modal form')
+    formModal.setAttribute('action', `/sala/${roomId}/${typeAction}/${questionId}`)
 
     /* Elementos do modal */
     const modalTitle = document.querySelector('.modal h2')

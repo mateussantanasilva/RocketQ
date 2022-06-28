@@ -82,6 +82,14 @@ h2{
     color: var(--black);
 }
 
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 1.8rem, 4vw);
+    line-height: 2.7rem;
+    color: var(--black);
+}
+
 .btn{
     display: flex;
     justify-content: center;

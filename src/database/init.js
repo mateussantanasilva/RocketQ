@@ -15,7 +15,8 @@ const initDb = { //roda apenas no inicio para criar o banco
             CREATE TABLE questions(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 content_question TEXT,
-                read INT
+                read INT,
+                room INT
             )
         `)
 
