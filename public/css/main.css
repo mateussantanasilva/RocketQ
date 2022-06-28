@@ -70,6 +70,10 @@ input[type='number']::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.login-room .input-code-room:placeholder-shown{
+    border: .2rem solid var(--gray-blue);
+}
+
 header img{
     width: 16.7rem;
 }
@@ -109,6 +113,8 @@ h3{
     border-color: var(--blue);
     background-color: var(--blue);
     color: var(--white);
+
+    transition: filter .2s;
 }
 
 .btn svg{
@@ -132,6 +138,10 @@ h3{
     border-color: var(--red);
     background-color: var(--red);
     color: var(--white);
+}
+
+.btn:hover{
+    filter: brightness(1.2);
 }
 
 .create-room .btn, .login-room button{

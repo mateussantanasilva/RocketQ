@@ -44,3 +44,35 @@ function changeClick(event, btnRead) {
 
     elementModal.open()
 }
+
+const btnCreateRoomInPageRomm = document.querySelector('.group-btns-nav a')
+btnCreateRoomInPageRomm.addEventListener('click', (event) => {
+    event.preventDefault()
+    const Toast = Swal.mixin({
+        width: 400,
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1800,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'warning',
+        title: 'Saindo da sala'
+    })
+    setTimeout(() => window.location.replace('/criar-senha'), 2000)
+})
+
+const formAsk = document.querySelector('.ask-section .form-area-question')
+const questionArea = document.querySelector('.ask-section #question')
+
+questionArea.addEventListener('keydown', () => {
+    formAsk.classList.add('has-content')
+    if(questionArea.value.length == ''){
+        formAsk.classList.remove('has-content')
+    }
+})

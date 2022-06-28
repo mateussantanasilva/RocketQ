@@ -47,6 +47,14 @@
     font-family: 'Poppins', sans-serif;
     line-height: 2.6rem;
     color: var(--gray-dark);
+    text-align: center;
+}
+
+.modal form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal form .input-modal{

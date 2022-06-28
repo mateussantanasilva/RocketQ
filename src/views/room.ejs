@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rocket.q - Criar sala</title>
+        <title>Rocket.q - Sala</title>
 
         <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,9 @@
 
         <!-- Scripts -->
         <script src="/js/main.js" defer type="module"></script>
+        
+        <!-- SweetAlerts -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
     <body>
@@ -26,7 +29,7 @@
                 <a href="/"><img src="/img/logo-rocketq.svg" alt="Logo da rocket.q"></a>
                 
                 <div class="group-btns-nav">
-                    <button class="btn btn-white" data-id="<%= room %>">
+                    <button class="btn btn-white" data-id="<%= room %>" disabled>
                         #<%= room %>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.6667 7.5H9.16667C8.24619 7.5 7.5 8.24619 7.5 9.16667V16.6667C7.5 17.5871 8.24619 18.3333 9.16667 18.3333H16.6667C17.5871 18.3333 18.3333 17.5871 18.3333 16.6667V9.16667C18.3333 8.24619 17.5871 7.5 16.6667 7.5Z" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -77,9 +80,9 @@
 
                     <section class="ask-section">
                             <h2>Faça sua pergunta</h2>
-                            <form action="/criar-pergunta/<%= room %>" method="post">
+                            <form action="/criar-pergunta/<%= room %>" method="post" class="form-area-question">
                                 <label class="sr-only" for="question">O que você quer perguntar?</label>
-                                <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
+                                <textarea name="question" id="question" placeholder="O que você quer perguntar?" required></textarea>
 
                                 <div class="footer-question">
                                     <div class="anonymous">
@@ -98,9 +101,7 @@
                     <section class="group-questions">
 
                         <% if(isNotHaveQuestions){ %>
-
                             <%- include('partials/no-questions') %>
-
                         <% } %>
 
                         <!-- Loop questions no read -->
@@ -147,6 +148,12 @@
                                     <p><%= questionRead.content_question %></p>
                                 </div>
                                 <div class="group-btns-actions">
+                                    <a href="#" class="btn-verified-read question-read">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6L9 17L4 12" stroke="#3485FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Pergunta lida
+                                    </a>
                                     <a href="#" class="btn-delete-question" data-id="<%= questionRead.id %>">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 6H5H21" stroke="#E83F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -170,7 +177,7 @@
                 <p>Tem certeza que você deseja excluir esta pergunta?</p>
                 <form action="" method="post">
                     <label for="password" class="sr-only">Insira a sua senha</label>
-                    <input type="password" name="password" id="password" class="input-modal input-red" placeholder="Digite sua senha">
+                    <input type="password" name="password" id="password" class="input-modal input-red" placeholder="Digite sua senha" required>
                     <div class="group-btns-modal">
                         <button class="btn btn-cancel btn-gray" type="button">
                             Cancelar

@@ -6,11 +6,18 @@ module.exports = {
         const contentQuestion = req.body.question
         const roomId = req.params.room
 
-        await db.run(`INSERT INTO questions(content_question, read, room) VALUES("${contentQuestion}", 0, ${roomId})`)
+        if(contentQuestion.length > 10){
+            await db.run(`INSERT INTO questions(content_question, read, room) VALUES("${contentQuestion}", 0, ${roomId})`)
 
-        await db.close()
+            await db.close()
+    
+            res.redirect(`/sala/${roomId}`)
+        }else{
+            let typeErrForm = 'pergunta pequena'
+            res.render(`errs`, {errorForm: typeErrForm, room:roomId})
+        }
 
-        res.redirect(`/sala/${roomId}`)
+        
     },
 
     async action(req, res){
@@ -31,8 +38,8 @@ module.exports = {
             await db.close()
             res.redirect(`/sala/${roomId}`)
         } else{
-            res.render('senha-incorreta', {room:roomId})
+            let typeErrForm = 'senha incorreta'
+            res.render(`errs`, {errorForm: typeErrForm, room:roomId})
         }
-
     }
 }

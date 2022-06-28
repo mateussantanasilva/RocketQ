@@ -35,11 +35,15 @@
 
     padding: 1.2rem 1.6rem 1.6rem 1.6rem;
 }
+.ask-section form.has-content{
+    border: .2rem solid var(--blue);
+}
 
 .ask-section textarea{
     resize: none;
     width: 100%;
     margin-bottom: 4rem;
+    background-color: var(--white);
 
     font-size: 1.6rem;
     line-height: 2.6rem;
@@ -168,4 +172,8 @@
 
 .question.question-read > .content-question > svg circle{
     fill: var(--gray-blue);
+}
+
+.group-btns-actions > .btn-verified-read.question-read{
+    pointer-events: none;
 }

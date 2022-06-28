@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Erro</title>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body style="background-color: #E0ECFF;">
+        <script>
+
+            if('<%= errorForm %>' == 'sala inexistente'){
+                Swal.fire({
+                    iconColor: '#3485FF',
+                    color: '#3485FF',
+                    background: '#FAFAFA',
+                    title: 'Sala inexistente!',
+                    text: 'O código da sala inserido não existe.',
+                    icon: 'error',
+                    showConfirmButton: false
+                })
+                setTimeout(() => window.location.replace('/'), 2500) 
+            }
+        
+            else if('<%= errorForm %>' == 'senha fraca'){
+                Swal.fire({
+                    iconColor: '#3485FF',
+                    color: '#3485FF',
+                    background: '#FAFAFA',
+                    title: 'Senha fraca!',
+                    text: 'A senha deve conter pelo menos 6 digitos.',
+                    icon: 'error',
+                    showConfirmButton: false
+                })
+                setTimeout(() => window.location.replace('/criar-senha'), 2500) 
+            }
+        
+            else if('<%= errorForm %>' == 'pergunta pequena'){
+                Swal.fire({
+                    iconColor: '#3485FF',
+                    color: '#3485FF',
+                    background: '#FAFAFA',
+                    title: 'Pergunta curta!',
+                    text: 'A pergunta deve conter pelo menos 11 caracteres.',
+                    icon: 'error',
+                    showConfirmButton: false
+                })
+                setTimeout(() => window.location.replace('/sala/<%= room %>'), 2500) 
+            }
+            
+            else if('<%= errorForm %>' == 'senha incorreta'){
+                Swal.fire({
+                    iconColor: '#3485FF',
+                    color: '#3485FF',
+                    background: '#FAFAFA',
+                    title: 'Senha incorreta!',
+                    text: 'A senha digitada não corresponde a senha cadastrada.',
+                    icon: 'error',
+                    showConfirmButton: false
+                })
+                setTimeout(() => window.location.replace('/sala/<%= room %>'), 2500) 
+            }
+        
+        </script>
+    </body>
+</html>
+

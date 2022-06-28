@@ -7,22 +7,29 @@ module.exports = {
         let roomId
         let roomAlreadyExists = true
 
-        while(roomAlreadyExists){ 
-            for (let i = 0; i < 6; i++) {        
-                i == 0 ? roomId = Math.floor(Math.random() * 10).toString() : roomId += Math.floor(Math.random() * 10).toString() //+= atribui a soma do atual valor da var com o valor passado  
+        if(pass.length > 5){
+
+            while(roomAlreadyExists){ 
+                for (let i = 0; i < 6; i++) {        
+                    i == 0 ? roomId = Math.floor(Math.random() * 10).toString() : roomId += Math.floor(Math.random() * 10).toString() //+= atribui a soma do atual valor da var com o valor passado  
+                }
+
+                const roomsExisting =  await db.all(`SELECT id FROM rooms`)
+                roomAlreadyExists = roomsExisting.some(roomExisting => roomExisting === roomId) //some verifica se existe algum igual
+
+                if (!roomAlreadyExists){
+                    await db.run(`INSERT INTO rooms(id, pass) VALUES(${parseInt(roomId)}, "${pass}")`) //parseInt converte em int
+
+                    await db.close()
+            
+                    res.redirect(`/sala/${roomId}`) //envia ao get
+                } 
             }
-
-            const roomsExisting =  await db.all(`SELECT id FROM rooms`)
-            roomAlreadyExists = roomsExisting.some(roomExisting => roomExisting === roomId) //some verifica se existe algum igual
-
-            if (!roomAlreadyExists){
-                await db.run(`INSERT INTO rooms(id, pass) VALUES(${parseInt(roomId)}, "${pass}")`) //parseInt converte em int
-
-                await db.close()
-        
-                res.redirect(`/sala/${roomId}`) //envia ao get
-            } 
-        } 
+            
+        }else{
+            let typeErrForm = 'senha fraca'
+            res.render(`errs`, {errorForm: typeErrForm, room:roomId})
+        }
     },
     
     async open(req, res){ //ao entrar na sala que existe ou foi criada
@@ -49,9 +56,20 @@ module.exports = {
         ) 
     },
 
-    login(req, res){
-        const roomId = req.body.code
+    async login(req, res){
+        const db = await database()
+        const roomId = parseInt(req.body.code)
+        
+        const roomsExisting =  await db.all(`SELECT id FROM rooms`)
+        let roomAlreadyExists = roomsExisting.some(roomExisting => roomExisting.id == parseInt(roomId))
+        
+        await db.close()
 
-        res.redirect(`/sala/${roomId}`)
+        if(roomAlreadyExists){
+            res.redirect(`/sala/${roomId}`)
+        }else{
+            let typeErrForm = 'sala inexistente'
+            res.render(`errs`, {errorForm: typeErrForm, room:roomId})
+        }
     }
 }
