@@ -1,9 +1,7 @@
 # RocketQ
 Aplicação de interação através de perguntas, sendo possível criar uma sala para internautas anônimos fazerem perguntas e o criador da sala em posse de uma senha gerenciar essas perguntas e marcar como lidas.
 
-<p align="center">
-  <img alt="Rocket.Q" src="./.github/front-cover.png" width="80%">
-</p>
+![Preview](https://github.com/mateussantanasilva/RocketQ/blob/main/github/front-cover.png)
 
 ## 🚀 Tecnologias
 
