@@ -4,7 +4,7 @@
   "description": "Plataforma de perguntas anônimas",
   "main": "./src/app.js",
   "scripts": {
-    "start": "nodemon .",
+    "start": "node .",
     "initDb": "node ./src/database/init.js"
   },
   "repository": {
