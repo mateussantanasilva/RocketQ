@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require ('path')
+const http = require('http')
 const routes = require('./routes')
 
 const app = express()
@@ -13,4 +14,8 @@ app.use(express.urlencoded({extended: true})) //permite passar dados codificados
 
 app.use(routes)
 
-app.listen(3000, () => console.log('Rodando...'))
+app.set('port', process.env.PORT || 3000)
+
+http.createServer(app).listen(app.get('port'), () => {
+    console.log(`Servidor rodando na porta ${app.get('port')}`)
+})
