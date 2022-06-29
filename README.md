@@ -25,11 +25,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Acesse o projeto local
 
-## :white_check_mark: Requisitos ##
+### :white_check_mark: Requisitos ###
 
 Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados.
 
-## :checkered_flag: Começo ##
+### :checkered_flag: Começo ###
 
 ```bash
 # Clone o projeto
