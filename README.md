@@ -2,7 +2,7 @@
 Aplicação de interação através de perguntas, sendo possível criar uma sala para internautas anônimos fazerem perguntas e o criador da sala em posse de uma senha gerenciar essas perguntas e marcar como lidas.
 
 <div align="center">
-    <img src="./.github/front-cover.png" width="90%" />
+    <img src="./.github/front-cover.webp" width="90%" />
 </div>
 
 ## 🚀 Tecnologias
