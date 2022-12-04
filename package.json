@@ -2,7 +2,7 @@
   "name": "rocketq",
   "version": "1.0.0",
   "description": "Plataforma de perguntas anônimas",
-  "main": "./src/app.js",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
     "start": "node .",
@@ -28,7 +28,7 @@
     "nodemon": "^2.0.18"
   },
   "engines": {
-    "node": "16.x",
+    "node": "14.x",
     "npm": "8.x"
   }
 }
