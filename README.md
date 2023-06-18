@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Acesse o projeto online
 
-- https://rocket-questions.herokuapp.com/
+- https://rocketq.onrender.com/
 
 ## 💻 Acesse o projeto local
 
